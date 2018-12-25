@@ -14,8 +14,7 @@ function chunkArrayInGroups(arr, size) {
     // j will be `size` step ahead
     // if i = 4; size = 2; j = 4,5
     for(let j = i; j < i+size; j++) {
-      if(arr[j] != undefined) 
-      groupedArr.push(arr[j])
+      if(arr[j] != undefined) groupedArr.push(arr[j])
     }
     console.log(groupedArr)
 
