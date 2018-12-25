@@ -4,8 +4,9 @@
  */
 function largestOfFour(arr) {
   const largestArr = arr.reduce((biggestArr, currArr) => {
-    // when init, bigEl = first element of currArr
     biggestArr.push(
+      // get the biggest element in currArr
+      // when init, bigEl = first element of currArr
       currArr.reduce((bigEl, nextEl) => {
         if(bigEl < nextEl) bigEl = nextEl
         return bigEl
