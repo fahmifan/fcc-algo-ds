@@ -1,6 +1,7 @@
 function SinglyLinkedList() {
   // head: Node
   this.head = null
+  this.length = 0
 }
 
 SinglyLinkedList.prototype.addToHead = function(val) {
@@ -9,7 +10,11 @@ SinglyLinkedList.prototype.addToHead = function(val) {
   // list is empty
   if(!this.head) this.head = newNode
   // list contains node
-  else this.head.next = newNode
+  else {
+    newNode.next = this.head
+    this.head = newNode
+  }
+  this.length++
 }
 
 // remove head element from list and return it
@@ -20,12 +25,14 @@ SinglyLinkedList.prototype.removeFromHead = function() {
   if(!this.head.next) {
     const rmEl = this.head
     this.head = null
+    this.length--
     return rmEl
   } 
   // list contains more than on element
   const rmEl = this.head
   this.head = this.head.next
   rmEl.next = null
+  this.length--
   return rmEl
 }
 
